@@ -2,7 +2,7 @@ function imhist(image) {
   console.log(image);
   let hist = new Array(256).fill(0);
   for (let i = 0; i < image.length; i++) {
-      hist[image[i]]++;
+    hist[image[i]]++;
   }
   return hist;
 }
@@ -12,7 +12,7 @@ export function imWTHeq(imageData, Wout_list = new Array(10).fill(0), r = 0.5, v
 
   const pixels = imageData;
   const numPixels = pixels.length / 4; // RGBA channels
-  
+
   // Compute the histogram
   let hist = new Array(256).fill(0);
   for (let i = 0; i < numPixels; i++) {
@@ -73,7 +73,7 @@ export function imWTHeq(imageData, Wout_list = new Array(10).fill(0), r = 0.5, v
   // Clamp pixel values to the range [0, 255] and round them
   Ftilde = Ftilde.map(val => Math.max(0, Math.min(255, val)));
   Ftilde = Ftilde.map(val => Math.round(val));
-  
+
   // Construct the processed image data array
   let flatProcessedData = [];
   for (let i = 0; i < numPixels; i++) {
